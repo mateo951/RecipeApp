@@ -10,6 +10,7 @@ class Ability
 
     can :manage, Food, user: user
     can :manage, Recipe, user: user
+    can :manage, RecipeFood, user: user
     can :read, :all, public: false, user: user
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?

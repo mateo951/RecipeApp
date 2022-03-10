@@ -1,0 +1,23 @@
+<div style="max-width: 540px;">
+  <div>
+    <div>
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9jR7bUx0LK6S4IWbxSaaSdJxE1sD9ZcdmeA&usqp=CAU" alt="recipe_image">
+    </div>
+    <div>
+    <div>
+      <div>
+        <h5><%= recipe.name %></h5>
+         <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe} %>
+      </div>
+    </div>
+    <div>
+      <div>
+        <p><%= recipe.description%>.</p>
+        <div>
+         <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
