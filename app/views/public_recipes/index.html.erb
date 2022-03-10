@@ -3,10 +3,10 @@
 <%= @recipes.each do |recipe|%>
   <div>
   <div>
-    <p class='has-text-weight-bold is-size-4'>Recipe Name: <%= recipe.name%></p>
-    <p class='has-text-weight-semibold is-size-5'>Recipe user email: <%= recipe.user.email%></p>
+    <p>Recipe Name: <%= recipe.name%></p>
+    <p >Recipe user email: <%= recipe.user.email%></p>
   </div>
-  <div class='has-text-weight-semibold is-size-5'>
+  <div>
     <p>Total food items: <%= @total_items%></p>
     <p>Total price: $<%= @total_cost %></p>
   </div>

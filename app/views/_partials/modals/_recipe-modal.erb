@@ -1,0 +1,40 @@
+<button type="button">
+  New recipe
+</button>
+
+<div>
+      <div>
+        <h5>Create new recipe</h5>
+        <button type="button"></button>
+      </div>
+      <div>
+            <%= form_with scope: :recipe, url: recipes_path, method: :post  do |form| %>
+                <div>
+		            <label for="name" class="form-label">Name</label>
+		            <%= form.text_field :name, required: true, autofocus: true, class: "form-control", id: "name"%>
+	            </div>
+	            <div>
+                    <label for="description" class="form-label">Description</label>
+		            <%= form.text_area :description, rows: 2, required: true, class: "form-control", id: 'description' %>
+	            </div>
+                <div>
+		            <label for="name" class="form-label">Preparation time (Minutes)</label>
+		            <%= form.text_field :preparation_time, required: true, class: "form-control", id: "preparation_time"%>
+	            </div>
+                <div>
+		            <label for="name" class="form-label">Cooking time (Minutes)</label>
+		            <%= form.text_field :cooking_time, required: true, class: "form-control", id: "cooking_time"%>
+	            </div>
+                
+                <div class="form-check form-switch">
+                    <%= form.check_box :public, class: 'form-check-input' %> Public 
+                </div>
+                <br>
+	            <div class="text-end mt-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= form.submit 'Save Recipe', class: "btn btn-success" %>
+            <% end %>
+          </div>   
+    </div>
+</div>
+<br>

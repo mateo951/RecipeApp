@@ -1,10 +1,10 @@
 class FoodsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_food, only: %i[show destroy]
 
   # GET /foods or /foods.json
   def index
     @foods = Food.all
+    @foods = current_user.foods.all.includes(:recipe_foods)
   end
 
   # GET /foods/1 or /foods/1.json
@@ -24,7 +24,7 @@ class FoodsController < ApplicationController
       if @food.save
         redirect_to foods_url, notice: 'Food was successfully created.'
       else
-        flash[:alert] = 'Error: Food is not created.'
+        redirect_to foods_url notice: 'Food was not created.'
       end
   end
 

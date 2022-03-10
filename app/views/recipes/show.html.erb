@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
-
 <div>
-  <%= link_to "Edit this recipe" %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+    <h1><%= @recipe.name %></h1>
+    <div>
+        <div>
+          <h3>Preparation time: <%= @recipe.preparation_time%></h3>
+          <h3>Cooking time: <%= @recipe.cooking_time%></h3>
+          <p>Steps go here ...</p>
+        </div>
+        <div>
+           <label>Public</label>
+           <% if @recipe.public %>
+            <input type="checkbox">
+          <%end%>
+        </div>
+    </div>
+    <div>
+        <%if user_signed_in? %>
+          <%= render partial: "_partials/modals/ingredient-modal",  locals: { recipe: @recipe} %><br>
+        <%end%>
+    </div>
+    <hr>
+    <div>
+      <%= render partial: "_partials/ingredients-table", locals: {recipe: @recipe, recipe_foods: @recipe_foods}%>
+    </div>
 </div>
