@@ -1,5 +1,14 @@
-<h1 class="center_content">Recipes</h1>
-<% @recipes.each do |recipe| %>
-  <%= render partial: 'recipe', object: recipe %>
-<% end %>
-<h2 class="center_content"><%= @recipes.count %> Recipes</h2> 
+<p style="color: green"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+<div id="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render recipe %>
+    <p>
+      <%= link_to "Show this recipe", recipe %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New recipe", new_recipe_path %>
