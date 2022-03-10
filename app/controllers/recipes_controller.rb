@@ -5,14 +5,14 @@ class RecipesController < ApplicationController
   # GET /recipes or /recipes.json
   def index
     # @current_user = current_user
-    @recipes = Recipe.all
+    @recipes = current_user.recipes.all
   end
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    # @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
     # @foods = @recipe.foods
-    # @recipe_foods = @recipe.recipe_foods
+    @recipe_foods = RecipeFood.includes(:recipe).where(recipe_id: @recipe.id)
     
   end
 
@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params.merge(user_id: current_user.id))
+    @recipe = current_user.recipes.new(recipe_params)
 
       if @recipe.save
         redirect_to recipe_url(@recipe), notice: "Recipe was successfully created."

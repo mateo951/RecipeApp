@@ -19,7 +19,7 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
-    @food = Food.new(food_params.merge(user_id: current_user.id))
+    @food = current_user.foods.new(food_params)
 
       if @food.save
         redirect_to foods_url, notice: 'Food was successfully created.'
