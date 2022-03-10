@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+.center_content {
+  text-align: center;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+  
+.recipe_data {
+  margin: auto;
+  justify-content: space-between;
+}
+
+.recipe-info {
+  width: 100%;
+  height: 100%;
+  margin: 20px 100px 20px 100px;
+  border: solid 1px gray;
+  gap: 20%;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+}
+
+#recipe {
+  font-size: 40px;
+}
+
+.recipe_desc {
+  align-self: end;
+  margin-bottom: 20px;
+  font-size: 20px;
+  padding: 15px;
+}
+
