@@ -1,10 +1,8 @@
-<div >
-      <div>
-        <h5><%= recipe.name %></h5>
-        <p><%= recipe.description%>.</p>
-       <div>
-         <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe} %>
-         <%= render partial: '_partials/buttons/recipe-detail', locals: { recipe: recipe} %>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= recipe.name %></h5>
+    <p class="card-text"><%= recipe.description%>.</p>
+    <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe} %>
+    <%= render partial: '_partials/buttons/recipe-detail', locals: { recipe: recipe} %>
+  </div>
 </div>
