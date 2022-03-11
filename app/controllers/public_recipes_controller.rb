@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PublicRecipesController < ApplicationController
   def index
     @recipes = current_user.recipes.where(public: true)

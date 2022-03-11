@@ -14,8 +14,8 @@
  *= require_self
  */
 
- @import "bootstrap";
- // Navbar
+@import "bootstrap";
+// Navbar
 .navbar {
   min-height: 50px;
 }
@@ -53,7 +53,7 @@
 }
 
 .margin-top-nav {
- margin-top: 5%;
+  margin-top: 5%;
 }
 
 .margin-bottom-login {
@@ -67,7 +67,7 @@
 .alert-p {
   color: red;
 }
- // Recipes Styling 
+// Recipes Styling
 .center_content {
   text-align: center;
 }
@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
 }
-  
+
 .recipe_data {
   margin: auto;
   justify-content: space-between;

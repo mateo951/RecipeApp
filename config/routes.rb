@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  root 'foods#index'
+  root 'public_recipes#index'
   get 'public_recipes', to: 'public_recipes#index'
 
   resources :users
@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :foods, only: %i[index new create destroy] do
     resources :recipe_foods, only: %i[create destroy]
   end
+  get 'shopping_list', to: 'shopping_lists#index', as: 'shopping_list'
 end
