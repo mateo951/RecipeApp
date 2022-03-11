@@ -1,14 +1,27 @@
-<div class="recipe_data flex-row">
-  <div class="recipe-info flex-row">
-    <div>
-      <h2 id="recipe"><%= recipe.name %></h2>
-      <%= link_to 'Remove', "/recipes" %>
-    </div>
-    <% if request.fullpath == '/' || request.fullpath == '/users' %>
-      <%= link_to 'Profile', "/users/#{user.id}" %>
-    <% end %>
-    <div class="recipe_desc">
-      <%= recipe.description %>
-    </div>
-  </div>
+<div id="<%= dom_id recipe %>">
+  <p>
+    <strong>Name:</strong>
+    <%= recipe.name %>
+  </p>
+
+  <p>
+    <strong>Preparation time:</strong>
+    <%= recipe.preparation_time %>
+  </p>
+
+  <p>
+    <strong>Cooking time:</strong>
+    <%= recipe.cooking_time %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= recipe.description %>
+  </p>
+
+  <p>
+    <strong>Public:</strong>
+    <%= recipe.public %>
+  </p>
+
 </div>

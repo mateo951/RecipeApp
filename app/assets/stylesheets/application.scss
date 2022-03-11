@@ -14,10 +14,12 @@
  *= require_self
  */
 
-@import "bootstrap";
+ @import "bootstrap";
 // Navbar
+
 .navbar {
   min-height: 50px;
+  background-color: #343a40;
 }
 
 .navbar a {
