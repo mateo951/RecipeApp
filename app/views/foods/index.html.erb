@@ -1,27 +1,23 @@
-<div>
-<%= render partial: "_partials/modals/food-modal"%>
-<div>
-  <div>
-    <table>
-      <thead>
+<%= link_to 'Add new food', new_food_path, :class => 'btn btn-secondary float-right add-button-margins' %>
+<div class="clear margin-table">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Unit price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
         <tr>
-          <th>Food</th>
-          <th>Measurement unit</th>
-          <th>Unit price</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @foods.each do |food| %>
-          <tr>
-          <td><%= food.name%></td>
-          <td><%= food.measurement_unit%></td>
-          <td><%= food.price%></td>
-          <td><%= link_to "Delete", food, method: :delete%></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+        <td><%= food.name%></td>
+        <td><%= food.measurement_unit%></td>
+        <td><%= food.price%></td>
+        <td><%= link_to "Delete", food, method: :delete%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div> 
