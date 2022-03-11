@@ -16,13 +16,17 @@
   </head>
 
   <body>
-    <div class="text-center m-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
       <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, :class=>'link-danger' %>
+        <strong><%= current_user.name %></strong>
+        <%= link_to "Logout", destroy_user_session_path, :class => 'link-danger'  %>
+      <% else %>
+      <%= link_to "Login", new_user_session_path  %>
+      <%= link_to "Sign up", new_user_registration_path %> 
       <% end %>
-    </div>
+    </nav>
     <%= yield %>
-    <p><%= notice %></p>
-    <p><%= alert %></p>
+    <p class="text-align-center notice-p"><%= notice %></p>
+    <p class="text-align-center alert-p"><%= alert %></p>
   </body>
 </html>
