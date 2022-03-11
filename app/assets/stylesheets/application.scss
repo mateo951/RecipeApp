@@ -15,7 +15,59 @@
  */
 
  @import "bootstrap";
+ // Navbar
+.navbar {
+  min-height: 50px;
+}
 
+.navbar a {
+  font-weight: 500;
+  color: #343a40;
+}
+
+.left-padding-nav {
+  padding-left: 30px;
+}
+
+// Login
+.center-div {
+  margin: auto;
+  width: 60%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.margin-top-nav {
+ margin-top: 5%;
+}
+
+.margin-bottom-login {
+  margin-bottom: 20px;
+}
+
+.notice-p {
+  color: green;
+}
+
+.alert-p {
+  color: red;
+}
+ // Recipes Styling 
 .center_content {
   text-align: center;
 }
