@@ -5,7 +5,7 @@ class Ability
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
-    can :read, :all
+    can :read, :all, public: true
     return unless user.present?
 
     can :manage, Food, user: user

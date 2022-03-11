@@ -1,3 +1,4 @@
+
 <% if can? :destroy, recipe %>
   <%= link_to recipe_recipe_food_path(recipe.id, ingredient.id), remote: true, method: :delete do%>
     <span>Remove</span>

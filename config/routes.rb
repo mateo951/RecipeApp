@@ -1,18 +1,19 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get 'public_recipes', to: 'public_recipes#index'
-  resources :recipe_foods
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  root "foods#index"
+  root 'foods#index'
+  get 'public_recipes', to: 'public_recipes#index'
+
   resources :users
-  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-    resources :recipe_foods, only: [:create, :destroy]
+  resources :recipes, only: %i[index show new create destroy] do
+    resources :recipe_foods, only: %i[create destroy]
   end
 
-  resources :foods, only: [:index, :new, :create, :destroy]  do
-     resources :recipe_foods, only: [:create, :destroy]
+  resources :foods, only: %i[index new create destroy] do
+    resources :recipe_foods
   end
-  
 end

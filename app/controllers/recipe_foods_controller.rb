@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RecipeFoodsController < ApplicationController
   # GET /recipe_foods or /recipe_foods.json
   def index
@@ -5,8 +7,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   # GET /recipe_foods/1 or /recipe_foods/1.json
-  def show
-  end
+  def show; end
 
   # GET /recipe_foods/new
   def new
@@ -22,11 +23,11 @@ class RecipeFoodsController < ApplicationController
       food_id: @food.id
     )
 
-      if @recipe_food.save
-         redirect_to recipe_path(params[:recipe_id]), notice: "Recipe food was successfully created."
-      else
-         redirect_to new_recipe_path, notice: "Recipe food was not created."
-      end
+    if @recipe_foods.save
+      redirect_to recipe_path(@recipe), notice: 'Recipe food was successfully created.'
+    else
+      redirect_to recipe_path(@recipe), notice: 'Recipe food was not created.'
+    end
   end
 
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
@@ -34,6 +35,6 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.find(params[:id])
     @recipe_food.destroy
 
-    redirect_to recipe_recipe_path, notice: "Recipe food was successfully destroyed."
+    redirect_to recipe_recipe_path, notice: 'Recipe food was successfully destroyed.'
   end
 end

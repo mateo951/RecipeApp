@@ -1,5 +1,5 @@
 <div>
-<%= link_to "Add New food", new_food_path %>
+<%= render partial: "_partials/modals/food-modal"%>
 <div>
   <div>
     <table>
@@ -18,7 +18,6 @@
           <td><%= food.name%></td>
           <td><%= food.measurement_unit%></td>
           <td><%= food.price%></td>
-          <td></td>
           <td><%= link_to "Delete", food, method: :delete%></td>
         </tr>
         <% end %>
