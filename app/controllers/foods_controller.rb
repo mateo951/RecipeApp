@@ -8,8 +8,7 @@ class FoodsController < ApplicationController
   end
 
   # GET /foods/1 or /foods/1.json
-  def show
-  end
+  def show; end
 
   # GET /foods/new
   def new
@@ -21,11 +20,11 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.new(food_params)
 
-      if @food.save
-        redirect_to foods_url, notice: 'Food was successfully created.'
-      else
-        redirect_to foods_url notice: 'Food was not created.'
-      end
+    if @food.save
+      redirect_to foods_url, notice: 'Food was successfully created.'
+    else
+      redirect_to foods_url notice: 'Food was not created.'
+    end
   end
 
   # DELETE /foods/1 or /foods/1.json
@@ -33,17 +32,18 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @food.destroy
 
-    redirect_to foods_url, notice: "Food was successfully deleted."
+    redirect_to foods_url, notice: 'Food was successfully deleted.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_food
-      @food = Food.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def food_params
-      params.require(:food).permit(:name, :measurement_unit, :price)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_food
+    @food = Food.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def food_params
+    params.require(:food).permit(:name, :measurement_unit, :price)
+  end
 end

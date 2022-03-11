@@ -1,3 +1,4 @@
+# shopping_lists_helper.rb
 module ShoppingListsHelper
   def total(ingredients)
     sum = 0
