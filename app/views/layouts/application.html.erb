@@ -15,14 +15,16 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light text-center">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-light bg-light text-center">
         <%= render "_partials/navbar" %>
-      <% else %>
+      </nav>
+    <% else %>
+      <nav class="navbar navbar-light bg-light text-center navbar-devise">
         <%= link_to "Login", new_user_session_path, :class => ' navbar-link'  %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'left-padding-nav navbar-link'  %> 
-      <% end %>
-    </nav>
+      </nav>
+    <% end %>
     <%= yield %>
     <p class="text-align-center notice-p"><%= notice %></p>
     <p class="text-align-center alert-p"><%= alert %></p>
