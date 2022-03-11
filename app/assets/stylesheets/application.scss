@@ -15,15 +15,26 @@
  */
 
  @import "bootstrap";
-// Navbar
+
+.margin-nav {
+  margin: 10px;
+}
+
+.font-weight-1 {
+  font-weight: 400;
+
+}
+
+.font-weight-2 {
+  font-weight: 600;
+} 
 
 .navbar {
   min-height: 50px;
-  background-color: #343a40;
 }
 
 .navbar a {
-  font-weight: 500;
+
   color: #343a40;
 }
 
@@ -31,7 +42,6 @@
   padding-left: 30px;
 }
 
-// Login
 .center-div {
   margin: auto;
   width: 60%;
@@ -69,7 +79,7 @@
 .alert-p {
   color: red;
 }
-// Recipes Styling
+
 .center_content {
   text-align: center;
 }
@@ -105,7 +115,6 @@
   padding: 15px;
 }
 
-// Foods
 .add-button-margins {
   margin: 20px 20px;
 }
