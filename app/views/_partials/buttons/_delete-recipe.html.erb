@@ -1,5 +1,5 @@
 <% if can? :destroy, recipe %>
-  <%= link_to recipe_path(recipe.id), remote: true, method: :delete do%>
+  <%= button_to recipe_path(recipe.id), remote: true, method: :delete, class:"btn btn-danger" do%>
     <span>Remove</span>
   <% end %>
 <% end %>

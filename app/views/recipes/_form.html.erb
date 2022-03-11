@@ -1,3 +1,4 @@
+<div class="container mb-3 ">
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
     <div style="color: red">
@@ -11,36 +12,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class: 'form-label' %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :preparation_time, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :preparation_time, style: "display: block", class: 'form-label' %>
     <%= form.time_field :preparation_time %>
   </div>
 
-  <div>
-    <%= form.label :cooking_time, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :cooking_time, style: "display: block", class: 'form-label' %>
     <%= form.time_field :cooking_time %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :description, style: "display: block", class: 'form-label' %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :public, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :public, style: "display: block", class: 'form-label' %>
     <%= form.check_box :public %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit "Add Recipe", class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>
