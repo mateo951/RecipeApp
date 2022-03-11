@@ -19,10 +19,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
       <% if user_signed_in? %>
         <strong><%= current_user.name %></strong>
-        <%= link_to "Logout", destroy_user_session_path, :class => 'link-danger'  %>
+        <%= button_to "Logout", destroy_user_session_path, :class => 'btn btn-danger'  %>
       <% else %>
-      <%= link_to "Login", new_user_session_path  %>
-      <%= link_to "Sign up", new_user_registration_path %> 
+      <%= button "Login", new_user_session_path, :class => 'btn btn-primary' %>
+      <%= button "Sign up", new_user_registration_path,:class => 'btn btn-success'%> 
       <% end %>
     </nav>
     <%= yield %>

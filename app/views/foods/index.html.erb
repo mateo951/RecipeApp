@@ -1,4 +1,4 @@
-<%= link_to 'Add new food', new_food_path, :class => 'btn btn-secondary float-right add-button-margins' %>
+<%= link_to 'Add new food', new_food_path, :class => 'btn btn-secondary float-left add-button-margins' %>
 <div class="clear margin-table">
   <table class="table">
     <thead class="thead-dark">
@@ -15,7 +15,7 @@
         <td><%= food.name%></td>
         <td><%= food.measurement_unit%></td>
         <td><%= food.price%></td>
-        <td><%= link_to "Delete", food, method: :delete%></td>
+        <td><%= button_to "Delete", food, method: :delete, class: 'btn btn-primary' %></td>
       </tr>
       <% end %>
     </tbody>
