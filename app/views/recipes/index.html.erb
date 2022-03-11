@@ -1,16 +1,17 @@
-<%= link_to 'Add new recipe', new_recipe_path, :class => 'btn btn-secondary float-right add-button-margins' %>
 <p style="color: green"><%= notice %></p>
 
-<div class="clear center_content">
-  <h2>Recipes</h2>
-  <div id="recipes">
-    <%if @recipes.empty?%>
+<%= link_to "New recipe", new_recipe_path, class: 'btn btn-secondary' %>
+
+<h1 class="text-center m-3">
+<strong>Recipes</strong>
+</h1>
+
+<div id="recipes">
+  <%if @recipes.empty?%>
      <p>No recipes.</p>
     <%else%>
       <% @recipes.each do |recipe| %>
-        <%= render partial: 'recipe', object: recipe %>
+        <%= render "_partials/cards/recipe-card", recipe: recipe %>
       <% end %>
-    <% end %>
-  </div>
-  <h2 class="center_content"><%= @recipes.count %> Recipes</h2> 
+  <% end %>
 </div>
