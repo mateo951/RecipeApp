@@ -1,6 +1,8 @@
+<%= link_to 'Add new recipe', new_recipe_path, :class => 'btn btn-secondary float-right add-button-margins' %>
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
+<div class="clear center_content">
+<h2>Recipes</h2>
 
 <div id="recipes">
   <%if @recipes.empty?%>
@@ -11,5 +13,4 @@
       <% end %>
   <% end %>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
+</div>
