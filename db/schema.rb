@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_09_182226) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_11_232019) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.string "measurement_unit"
-    t.decimal "price", precision: 10, scale: 2
+    t.decimal "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,11 +25,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_182226) do
   end
 
   create_table "recipe_foods", force: :cascade do |t|
-    t.integer "quantity"
-    t.bigint "recipe_id"
-    t.bigint "food_id"
+    t.decimal "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "food_id"
+    t.bigint "recipe_id"
     t.index ["food_id"], name: "index_recipe_foods_on_food_id"
     t.index ["recipe_id"], name: "index_recipe_foods_on_recipe_id"
   end
@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_182226) do
     t.string "name"
     t.integer "preparation_time"
     t.integer "cooking_time"
-    t.string "description"
-    t.boolean "public"
+    t.text "description"
+    t.boolean "public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_09_182226) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
   add_foreign_key "foods", "users"
   add_foreign_key "recipe_foods", "foods"
   add_foreign_key "recipe_foods", "recipes"
