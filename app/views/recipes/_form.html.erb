@@ -1,0 +1,48 @@
+<div class="container mb-3 ">
+<%= form_with(model: recipe) do |form| %>
+  <% if recipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% recipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class: 'form-label' %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :preparation_time, style: "display: block", class: 'form-label' %>
+    <%= form.number_field :preparation_time, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :cooking_time, style: "display: block", class: 'form-label' %>
+    <%= form.number_field :cooking_time, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, style: "display: block", class: 'form-label' %>
+    <%= form.text_area :description, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :public, style: "display: block", class: 'form-label' %>
+    <%= form.check_boxhas :public, {:class => "myclass", :style => "mystyle"}, "checked-value", "unchecked-value" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Add Recipe", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>

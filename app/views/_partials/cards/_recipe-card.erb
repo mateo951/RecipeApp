@@ -1,0 +1,17 @@
+<div class="recipe_data flex-row">
+  <div class="recipe-info flex-column">
+    <div class="flex-row justify-content">
+      <h2 id="recipe"><%= recipe.name %></h2>
+      <% if request.fullpath == '/' || request.fullpath == '/users' %>
+        <%= link_to 'Profile', "/users/#{user.id}" %>
+      <% end %>
+      <div class="">
+        <%= recipe.description %>
+      </div>
+    </div>
+    <div class="d-flex margin-bottom-login">
+      <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe } %>
+      <%= render partial: '_partials/buttons/recipe-detail', locals: { recipe: recipe} %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to "New recipe", new_recipe_path, class: 'btn btn-secondary float-right add-button-margins' %>
+
+<h1 class="clear text-center m-3">
+<strong>Recipes</strong>
+</h1>
+
+<div id="recipes">
+  <%if @recipes.empty?%>
+     <p>No recipes.</p>
+    <%else%>
+      <% @recipes.each do |recipe| %>
+        <%= render "_partials/cards/recipe-card", recipe: recipe %>
+      <% end %>
+  <% end %>
+</div>
