@@ -1,12 +1,17 @@
-<div class="card">
-  <div class="card-body">
-    <div class="d-flex m-3">
-    <h2 class="card-title p-2"><strong><%= recipe.name %></strong></h2>
-    <p class="card-text"><%= recipe.description%>.</p>
+<div class="recipe_data flex-row">
+  <div class="recipe-info flex-column">
+    <div class="flex-row justify-content">
+      <h2 id="recipe"><%= recipe.name %></h2>
+      <% if request.fullpath == '/' || request.fullpath == '/users' %>
+        <%= link_to 'Profile', "/users/#{user.id}" %>
+      <% end %>
+      <div class="">
+        <%= recipe.description %>
+      </div>
     </div>
-    <div class="d-flex">
-    <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe} %>
-    <%= render partial: '_partials/buttons/recipe-detail', locals: { recipe: recipe} %>
+    <div class="d-flex margin-bottom-login">
+      <%= render partial: '_partials/buttons/delete-recipe', locals: { recipe: recipe } %>
+      <%= render partial: '_partials/buttons/recipe-detail', locals: { recipe: recipe} %>
     </div>
   </div>
 </div>
