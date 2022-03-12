@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
 
 .navbar-devise {
   justify-content: left !important;
@@ -26,19 +26,17 @@
 
 .font-weight-1 {
   font-weight: 400;
-
 }
 
 .font-weight-2 {
   font-weight: 600;
-} 
+}
 
 .navbar {
   min-height: 50px;
 }
 
 .navbar a {
-
   color: #343a40;
 }
 
@@ -91,10 +89,6 @@
 .flex-row {
   display: flex;
   align-items: center;
-}
-
-.flex-column-1 {
-
 }
 
 .recipe_data {
