@@ -1,0 +1,24 @@
+<table class="table table-striped table-hover w-100 text-center">
+ <% if recipe_foods.any? %>
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% recipe_foods.each do |ingredient|%>
+    <tr>
+      <th scope="row"><%= ingredient.food.name%></th>
+      <td><%= ingredient.quantity%><%= ingredient.food.measurement_unit%></td>
+      <td>$ <%= ingredient.food.price * ingredient.quantity%></td>
+      <td>
+      <button type="button" class="btn btn-primary">Modify</button>
+      <%= render partial: "_partials/buttons/delete-recipe_foods", locals: {recipe: @recipe, ingredient: ingredient} %></td>
+    </tr>  
+  <%end%>
+<%end%>
+  </tbody>
+</table> 

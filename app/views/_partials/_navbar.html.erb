@@ -1,0 +1,15 @@
+<nav class="nav w-100 navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to "RECIPE APP", root_path, class: 'ps-4 mx-5 is-link text-dark font-weight-2' %>
+    <%= link_to "Foods", foods_path, class: "navbar-item text-dark margin-nav font-weight-1" %>
+    <%= link_to "Recipes", recipes_path, class: "navbar-item text-dark margin-nav font-weight-1" %>
+    <%= link_to "Shopping List", shopping_list_path, class: "navbar-item text-dark margin-nav font-weight-1" %>
+    <%= link_to "Public Recipes", root_path, class: "navbar-item text-dark margin-nav font-weight-1" %>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+        <div class="buttons">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+        </div>
+  </div>
+</nav>

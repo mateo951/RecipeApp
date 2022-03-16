@@ -1,0 +1,21 @@
+<div class="margin-top-nav flex-column align-items margin-top-nav">
+<h2 class="center_content margin-bottom-login">Create a new food</h2>
+<%= form_with scope: :food, url: foods_path, method: :post  do |form| %>
+  <div class="form-group">
+    <label for="name">Name</label><br>
+    <%= form.text_field :name, required: true, autofocus: true %>
+  </div>
+  <div class="form-group">
+    <label for="measurement_unit">Measurement unit</label><br>
+    <%= form.text_field :measurement_unit, required: true %>
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label><br>
+    <%= form.text_field :price, required: true %>
+  </div>
+<br>
+<%= form.submit 'Save food', :class => 'btn btn-primary' %>
+<%= link_to 'Back', url_for(:back), :class => 'btn btn-secondary float-right' %>
+<% end %>
+
+</div> 
